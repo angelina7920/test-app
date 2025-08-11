@@ -1,0 +1,41 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <div class="title">{{ imageDialogData.title }}</div>
+    <button
+      class="close-btn"
+      type="button"
+      (click)="close()"
+      aria-label="Close dialog"
+    >
+      ✕
+    </button>
+  </div>
+  <div class="dialog-body">
+    @if (isLoading()) {
+      <div class="placeholder" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="message">Loading image…</div>
+      </div>
+    }
+    <canvas #canvas></canvas>
+  </div>
+  <div class="dialog-footer">
+    <button
+      class="clear-btn"
+      type="button"
+      (click)="clear()"
+      [disabled]="isLoading()"
+    >
+      Clear
+    </button>
+    <div class="spacer"></div>
+    <button
+      class="save-btn"
+      type="button"
+      (click)="save()"
+      [disabled]="isLoading()"
+    >
+      Save
+    </button>
+  </div>
+</div>

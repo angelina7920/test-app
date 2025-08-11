@@ -1,0 +1,10 @@
+{
+  "/api/openverse": {
+    "target": "https://api.openverse.engineering/v1",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/openverse": ""
+    }
+  }
+}

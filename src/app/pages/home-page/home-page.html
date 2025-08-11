@@ -1,0 +1,44 @@
+<div class="search-container">
+  <h1>Openverse Image Search</h1>
+  <app-autocomplete-input
+    class="search-input"
+    [options]="filteredSearchOptions()"
+    [formControl]="searchControl"
+    placeholder="Search for images..."
+  ></app-autocomplete-input>
+</div>
+
+<div class="results-container">
+  @if (isLoading() && searchResults().length === 0) {
+    <div class="loading">Loading...</div>
+  }
+
+  @if (!isLoading() && searchResults().length === 0 && searchControl.value) {
+    <div class="no-results">
+      No results found for "{{ searchControl.value }}".
+    </div>
+  }
+  @if (searchResults().length > 0) {
+    <cdk-virtual-scroll-viewport
+      #virtualScroll
+      class="virtual-scroll-viewport"
+      [itemSize]="itemSize"
+      appScrollEndReached
+      [scrollGap]="itemSize"
+      (scrollEndReached)="onScrollEnd()"
+    >
+      <div class="results-column">
+        <app-openverse-card
+          *cdkVirtualFor="let item of searchResults()"
+          [item]="item"
+          (cardClick)="onCardClick($event)"
+          class="result-card"
+        >
+        </app-openverse-card>
+      </div>
+      @if (isLoading() && searchResults().length > 0) {
+        <div class="loading-more">Loading more...</div>
+      }
+    </cdk-virtual-scroll-viewport>
+  }
+</div>

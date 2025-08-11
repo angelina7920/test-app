@@ -1,0 +1,2 @@
+export const DRAW_CLOSE_RADIUS_CSS = 10;
+export const ROTATE_HANDLE_HIT_RADIUS_CSS = 12;

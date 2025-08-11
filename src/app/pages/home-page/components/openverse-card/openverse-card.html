@@ -1,0 +1,22 @@
+<button
+  class="card"
+  (click)="onCardClick()"
+  (keydown.enter)="onCardClick()"
+  (keydown.space)="onCardClick()"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="'View details for ' + item().title"
+>
+  <div class="image-container">
+    <img
+      [ngSrc]="item().thumbnail || item().url"
+      [alt]="item().title"
+      height="200"
+      width="200"
+      priority
+    />
+  </div>
+  <div class="content">
+    <h3 class="title">{{ item().title }}</h3>
+  </div>
+</button>
