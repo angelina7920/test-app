@@ -1,7 +1,7 @@
 # Lumana Demo App
 
+![asd](https://github.com/user-attachments/assets/eb3e39fe-dbb2-41ff-8249-37678f714dad)
 
-![Untitled3 - Google Chrome 2025-08-11 16-33-25 (1)](https://github.com/user-attachments/assets/13d8af4a-6934-4041-a729-846f12d85564)
 
 An Angular-based demo that showcases three core capabilities: instant search with live filtering, efficient rendering for very long lists, and a canvas playground to sketch and transform shapes.
 
